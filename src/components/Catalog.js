@@ -9,7 +9,7 @@ const habitaciones = [
     capacidad: "1 persona",
     cama: "Cama de 1 plaza y media",
     precio: 45000,
-    imagen: "/img/habitacion1.jpg",
+    imagen: process.env.PUBLIC_URL + "/img/habitacion1.svg",
     color: "linear-gradient(135deg, #efe6da, #dccbb5)",
   },
   {
@@ -19,7 +19,7 @@ const habitaciones = [
     capacidad: "2 personas",
     cama: "Cama king size",
     precio: 65000,
-    imagen: "/img/habitacion2.jpg",
+    imagen: process.env.PUBLIC_URL + "/img/habitacion2.svg",
     color: "linear-gradient(135deg, #e9e1d6, #cdb9a0)",
   },
   {
@@ -29,7 +29,7 @@ const habitaciones = [
     capacidad: "4 personas",
     cama: "1 cama queen y 2 camas individuales",
     precio: 90000,
-    imagen: "/img/habitacion3.jpg",
+    imagen: process.env.PUBLIC_URL + "/img/habitacion3.svg",
     color: "linear-gradient(135deg, #ece4d9, #c9b296)",
   },
   {
@@ -39,7 +39,7 @@ const habitaciones = [
     capacidad: "2 personas",
     cama: "Cama king size premium",
     precio: 130000,
-    imagen: "/img/habitacion4.jpg",
+    imagen: process.env.PUBLIC_URL + "/img/habitacion4.svg",
     color: "linear-gradient(135deg, #e6dccd, #b89a78)",
   },
 ];
