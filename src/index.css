@@ -6,6 +6,7 @@
   --borde: #ece7df;
   --acento: #b08968;
   --acento-oscuro: #8f6b4d;
+  --oscuro: #2b2420;
 }
 
 * {
@@ -34,4 +35,10 @@ h3 {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--acento);
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 24px;
 }

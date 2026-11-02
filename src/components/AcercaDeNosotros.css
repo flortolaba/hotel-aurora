@@ -1,0 +1,451 @@
+.acerca {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.acerca-banner {
+  height: 300px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  background-color: #6b5a4a;
+  background-size: cover;
+  background-position: center;
+}
+
+.acerca h1 {
+  margin: 0 0 24px;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.acerca-texto {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--texto-suave);
+}
+
+.acerca-datos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0 16px;
+}
+
+.acerca-datos div {
+  padding: 24px 12px;
+  text-align: center;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+}
+
+.acerca-datos strong {
+  display: block;
+  margin-bottom: 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--acento-oscuro);
+}
+
+.acerca-datos span {
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+.acerca-grilla {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.acerca-grilla article {
+  padding: 24px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+}
+
+.acerca-grilla h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  color: var(--acento-oscuro);
+}
+
+.acerca-grilla p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+/* ---------- Bloques ---------- */
+.bloque {
+  margin-top: 80px;
+}
+
+.bloque h2 {
+  margin: 0 0 24px;
+  font-size: 32px;
+}
+
+/* ---------- Contacto ---------- */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.contacto-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  color: inherit;
+  text-decoration: none;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+a.contacto-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--acento);
+  box-shadow: 0 12px 28px rgba(60, 45, 30, 0.1);
+}
+
+.contacto-icono {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  color: var(--acento-oscuro);
+  background: #f3ebe0;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+a.contacto-card:hover .contacto-icono {
+  color: #fff;
+  background: var(--acento);
+}
+
+.contacto-icono svg {
+  width: 21px;
+  height: 21px;
+}
+
+.contacto-card small {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+.contacto-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--texto);
+  word-break: break-word;
+}
+
+/* ---------- Preguntas frecuentes ---------- */
+.faq details {
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+}
+
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  font-size: 20px;
+  line-height: 1;
+  color: var(--acento);
+}
+
+.faq details[open] summary::after {
+  content: "–";
+}
+
+.faq details p {
+  margin: 0;
+  padding: 0 22px 20px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--texto-suave);
+}
+
+/* ---------- Consultas ---------- */
+.consultas {
+  display: grid;
+  grid-template-columns: 0.85fr 1.25fr;
+  margin-top: 80px;
+  overflow: hidden;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 26px;
+  box-shadow: 0 24px 60px rgba(60, 45, 30, 0.12);
+  scroll-margin-top: 130px;
+}
+
+.consultas-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 44px 36px;
+  color: #fff;
+  background: linear-gradient(160deg, #3a2f28, #241c17);
+  overflow: hidden;
+}
+
+.consultas-info::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -70px;
+  width: 220px;
+  height: 220px;
+  background: rgba(176, 137, 104, 0.2);
+  border-radius: 50%;
+}
+
+.etiqueta-clara {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d6b896;
+}
+
+.consultas-info h2 {
+  margin: 0 0 14px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.consultas-texto {
+  margin: 0 0 28px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #d9cfc4;
+}
+
+.consultas-medios {
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.consultas-medios li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.consultas-medios svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #d6b896;
+}
+
+.consultas-redes {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.consultas-redes a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.consultas-redes a:hover {
+  background: var(--acento);
+  border-color: var(--acento);
+  transform: translateY(-3px);
+}
+
+.consultas-redes svg {
+  width: 19px;
+  height: 19px;
+}
+
+.consultas-tiempo {
+  position: relative;
+  z-index: 1;
+  margin: auto 0 0;
+  font-size: 13px;
+  color: #a89d90;
+}
+
+.consultas-form {
+  padding: 40px 36px;
+}
+
+.selector-tipo {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 26px;
+  padding: 5px;
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+}
+
+.selector-tipo button {
+  flex: 1;
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--texto-suave);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.selector-tipo button.activo {
+  color: #fff;
+  background: var(--acento);
+  box-shadow: 0 6px 16px rgba(143, 107, 77, 0.35);
+}
+
+.consultas-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.campo-consulta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.campo-consulta.ancho {
+  grid-column: 1 / -1;
+}
+
+.campo-consulta input,
+.campo-consulta select,
+.campo-consulta textarea {
+  padding: 13px 15px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo-consulta input:focus,
+.campo-consulta select:focus,
+.campo-consulta textarea:focus {
+  background: #fff;
+  border-color: var(--acento);
+  box-shadow: 0 0 0 4px rgba(176, 137, 104, 0.15);
+}
+
+.btn-consulta {
+  width: 100%;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--acento);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-consulta:hover {
+  background: var(--acento-oscuro);
+  transform: translateY(-1px);
+}
+
+.exito {
+  margin: 18px 0 0;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--acento-oscuro);
+  background: #f3ebe0;
+  border-radius: 12px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .consultas {
+    grid-template-columns: 1fr;
+  }
+  .contacto-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .acerca h1 {
+    font-size: 30px;
+  }
+  .acerca-banner {
+    height: 200px;
+  }
+  .acerca-datos,
+  .acerca-grilla,
+  .contacto-grid,
+  .consultas-campos {
+    grid-template-columns: 1fr;
+  }
+  .consultas-info,
+  .consultas-form {
+    padding: 28px 22px;
+  }
+}

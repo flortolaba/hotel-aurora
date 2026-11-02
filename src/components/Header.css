@@ -1,16 +1,74 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(250, 248, 245, 0.88);
+  z-index: 20;
+  background: rgba(250, 248, 245, 0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--borde);
 }
 
+/* ---------- Barra superior ---------- */
+.barra-superior {
+  background: var(--oscuro);
+  color: #d9cfc4;
+  font-size: 12px;
+}
+
+.barra-contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.barra-datos {
+  display: flex;
+  gap: 22px;
+}
+
+.barra-datos span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.barra-superior svg {
+  width: 14px;
+  height: 14px;
+}
+
+.barra-redes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.barra-redes a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: #d9cfc4;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.barra-redes a:hover {
+  color: #fff;
+  background: var(--acento);
+  border-color: var(--acento);
+}
+
+/* ---------- Cabecera ---------- */
 .header-contenido {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +77,7 @@
 
 .marca {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: 0.02em;
   color: var(--texto);
   text-decoration: none;
@@ -34,46 +92,223 @@
   color: var(--acento);
 }
 
-.nav {
+.header-acciones {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 14px;
 }
 
-.nav a {
-  position: relative;
+.header-cta {
+  padding: 10px 24px;
   font-size: 14px;
-  color: var(--texto-suave);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 1px;
+  font-weight: 500;
+  color: #fff;
   background: var(--acento);
-  transition: width 0.25s ease;
+  border-radius: 999px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s ease;
 }
 
-.nav a:hover,
-.nav a.active {
+.header-cta:hover {
+  background: var(--acento-oscuro);
+}
+
+/* ---------- Botón hamburguesa (siempre visible) ---------- */
+.hamburguesa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  padding: 12px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.hamburguesa:hover {
+  border-color: var(--acento);
+}
+
+.hamburguesa span {
+  display: block;
+  height: 2px;
+  background: var(--texto);
+  border-radius: 2px;
+}
+
+/* ---------- Fondo oscuro ---------- */
+.fondo-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(30, 22, 14, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.fondo-menu.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Panel lateral ---------- */
+.panel-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  width: min(380px, 88vw);
+  height: 100%;
+  padding: 26px 30px;
+  background: var(--fondo);
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.35s ease, visibility 0.35s;
+}
+
+.panel-menu.abierto {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.panel-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.panel-marca {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
   color: var(--texto);
 }
 
-.nav a:hover::after,
-.nav a.active::after {
-  width: 100%;
+.panel-marca small {
+  margin-left: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--acento);
 }
 
-@media (max-width: 600px) {
-  .header-contenido {
-    flex-direction: column;
-    gap: 10px;
+.panel-cerrar {
+  width: 42px;
+  height: 42px;
+  font-size: 16px;
+  color: var(--texto);
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.panel-cerrar:hover {
+  color: #fff;
+  background: var(--acento);
+  border-color: var(--acento);
+}
+
+.panel-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-nav a {
+  padding: 18px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  color: var(--texto);
+  text-decoration: none;
+  border-bottom: 1px solid var(--borde);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.panel-nav a:hover {
+  color: var(--acento-oscuro);
+  padding-left: 8px;
+}
+
+.panel-nav a.active {
+  color: var(--acento);
+}
+
+.panel-pie {
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+.panel-pie p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+.panel-pie p svg {
+  width: 17px;
+  height: 17px;
+  color: var(--acento);
+}
+
+.panel-redes {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.panel-redes a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--texto);
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.panel-redes a:hover {
+  color: #fff;
+  background: var(--acento);
+  border-color: var(--acento);
+  transform: translateY(-3px);
+}
+
+.panel-redes svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 860px) {
+  .barra-datos {
+    display: none;
   }
-  .nav {
-    gap: 22px;
+
+  .barra-contenido {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-cta {
+    padding: 10px 16px;
   }
 }

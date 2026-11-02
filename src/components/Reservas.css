@@ -1,0 +1,513 @@
+.reservas-intro {
+  max-width: 620px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.reservas-intro h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.15;
+}
+
+/* ---------- Títulos de los pasos ---------- */
+.paso {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 24px;
+  font-size: 24px;
+}
+
+.paso span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--acento);
+  border-radius: 50%;
+}
+
+.ancla {
+  scroll-margin-top: 130px;
+}
+
+/* ---------- Habitaciones ---------- */
+.grilla-habitaciones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  margin-bottom: 64px;
+}
+
+.habitacion {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--tarjeta);
+  border: 2px solid var(--borde);
+  border-radius: 22px;
+  box-shadow: 0 8px 26px rgba(60, 45, 30, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.habitacion:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(60, 45, 30, 0.13);
+}
+
+.habitacion.elegida {
+  border-color: var(--acento);
+  box-shadow: 0 20px 44px rgba(143, 107, 77, 0.22);
+}
+
+.habitacion-imagen {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: #e5dbcd;
+}
+
+.habitacion-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.habitacion:hover .habitacion-imagen img {
+  transform: scale(1.05);
+}
+
+.habitacion-tag {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 9px 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  color: var(--texto);
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.habitacion-tag small {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.habitacion-elegida {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--acento);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.habitacion-elegida svg {
+  width: 15px;
+  height: 15px;
+}
+
+.habitacion-cuerpo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+}
+
+.habitacion-cuerpo h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.habitacion-desc {
+  margin: 0 0 16px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.habitacion-datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.habitacion-datos span {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--acento-oscuro);
+  background: #f3ebe0;
+  border-radius: 999px;
+}
+
+.habitacion-servicios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 14px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.habitacion-servicios li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--texto-suave);
+}
+
+.habitacion-servicios svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--acento);
+}
+
+.btn-elegir {
+  margin-top: auto;
+  padding: 13px 20px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--acento-oscuro);
+  background: transparent;
+  border: 1px solid var(--acento);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-elegir:hover {
+  color: #fff;
+  background: var(--acento);
+}
+
+.btn-elegir.activo {
+  color: #fff;
+  background: var(--acento);
+}
+
+/* ---------- Calendario y resumen ---------- */
+.panel-reserva {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 64px;
+}
+
+.calendario {
+  padding: 26px;
+  text-align: center;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 22px;
+  box-shadow: 0 8px 26px rgba(60, 45, 30, 0.06);
+}
+
+.calendario-ayuda {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+/* Calendario (react-datepicker) */
+.react-datepicker {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+}
+
+.react-datepicker__month-container {
+  float: none;
+}
+
+.react-datepicker__header {
+  background: transparent;
+  border-bottom: 1px solid var(--borde);
+}
+
+.react-datepicker__current-month {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  width: 2.5rem;
+  line-height: 2.5rem;
+  margin: 0.15rem;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--range-start,
+.react-datepicker__day--range-end {
+  background-color: var(--acento) !important;
+  color: #fff !important;
+  border-radius: 50%;
+}
+
+.react-datepicker__day--in-range,
+.react-datepicker__day--in-selecting-range {
+  background-color: #eadccb;
+  color: var(--texto);
+}
+
+.react-datepicker__day:hover {
+  border-radius: 50%;
+}
+
+/* Resumen */
+.resumen {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 22px;
+  box-shadow: 0 8px 26px rgba(60, 45, 30, 0.06);
+}
+
+.resumen-foto {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--texto-suave);
+  background: #f3ebe0;
+}
+
+.resumen-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resumen-cuerpo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 26px 26px;
+}
+
+.resumen-cuerpo h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+.resumen dl {
+  margin: 0 0 16px;
+}
+
+.resumen dl div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--borde);
+  font-size: 14px;
+}
+
+.resumen dt {
+  color: var(--texto-suave);
+}
+
+.resumen dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.resumen-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 16px 20px;
+  color: #fff;
+  background: linear-gradient(135deg, #b08968, #8f6b4d);
+  border-radius: 14px;
+}
+
+.resumen-total span {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.resumen-total strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.resumen-notas {
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resumen-notas li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  font-size: 13px;
+  color: var(--texto-suave);
+}
+
+.resumen-notas svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--acento);
+}
+
+/* ---------- Datos del huésped ---------- */
+.panel-datos {
+  padding: 32px;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 22px;
+  box-shadow: 0 8px 26px rgba(60, 45, 30, 0.06);
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.campo.ancho {
+  grid-column: 1 / -1;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 13px 15px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  background: #fff;
+  border-color: var(--acento);
+  box-shadow: 0 0 0 4px rgba(176, 137, 104, 0.15);
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+  cursor: pointer;
+}
+
+.check input {
+  margin-top: 3px;
+  accent-color: var(--acento);
+}
+
+.btn-confirmar {
+  width: 100%;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--acento);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-confirmar:hover {
+  background: var(--acento-oscuro);
+  transform: translateY(-1px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .grilla-habitaciones {
+    grid-template-columns: 1fr;
+  }
+  .panel-reserva {
+    grid-template-columns: 1fr;
+  }
+  .calendario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .reservas-intro h1 {
+    font-size: 30px;
+  }
+  .paso {
+    font-size: 20px;
+  }
+  .campos {
+    grid-template-columns: 1fr;
+  }
+  .panel-datos {
+    padding: 22px;
+  }
+  .habitacion-servicios {
+    grid-template-columns: 1fr;
+  }
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    width: 2.1rem;
+    line-height: 2.1rem;
+  }
+}
