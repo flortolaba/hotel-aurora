@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/hotel-aurora/static/css/main.636962b1.css",
+    "main.js": "/hotel-aurora/static/js/main.ffcbf3ff.js",
+    "static/media/hero.png": "/hotel-aurora/static/media/hero.a254a49ce788f9186eae.png",
+    "static/media/habitacion1.png": "/hotel-aurora/static/media/habitacion1.af98ff3845845d19459d.png",
+    "static/media/habitacion4.png": "/hotel-aurora/static/media/habitacion4.724d3a54111d38f5e3ac.png",
+    "static/media/habitacion2.png": "/hotel-aurora/static/media/habitacion2.9308adf5d7e0b0944eb8.png",
+    "static/media/habitacion3.png": "/hotel-aurora/static/media/habitacion3.85b23d2596e8a4c55c50.png",
+    "index.html": "/hotel-aurora/index.html",
+    "main.636962b1.css.map": "/hotel-aurora/static/css/main.636962b1.css.map",
+    "main.ffcbf3ff.js.map": "/hotel-aurora/static/js/main.ffcbf3ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.636962b1.css",
+    "static/js/main.ffcbf3ff.js"
+  ]
+}
